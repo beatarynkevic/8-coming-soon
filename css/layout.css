@@ -7,7 +7,7 @@
   .container > .row-short {
       display: inline-block;
       width: 600px;
-      margin-left: calc(50% - 300px);
+      margin: 0 calc(50% - 300px);
   }
   .container > .row {
       display: inline-block;
