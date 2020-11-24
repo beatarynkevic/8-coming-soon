@@ -75,13 +75,32 @@ footer {
     font-size: 17px;
     color: #fffa;
 }
-    footer > .row {
+    footer.container > .row {
+        padding: 10px 20px;
         border-bottom: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap; 
     }
     footer .text-trio {
         display: inline-block;
         width: 100%;
     }
+    footer .fa {
+        display: inline-block;
+        color: #fff;
+        padding: 10px;
+        line-height: 20px;
+        width: 40px;
+        text-align: center;
+        border-radius: 50%;
+        transition: all 0.5s;
+    }
+        footer .fa:hover {
+            background-color: #fff;
+            color: var(--main-color);
+        }
         footer .text-trio > .text {
             display: inline-block;
             padding: 0 10px;
@@ -107,6 +126,7 @@ footer {
     }
     footer a {
         color: #fff;
+        text-decoration: none;
     }
 @media (max-width: 700px) {
     footer .text-trio > .text {
