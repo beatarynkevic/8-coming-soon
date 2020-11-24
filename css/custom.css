@@ -49,8 +49,20 @@ footer.container {
     margin-bottom: calc(var(--hero-space) * 2);
 }
 .hero .form {
+    width: 90%;
     margin-bottom: var(--hero-space);
 }
+    .hero .form > input {
+        width: 100%;
+        background-color: transparent;
+        border-bottom-color: #fff8;
+    }
+        .hero .form > input::placeholder {
+            color: #fff8;
+        }
+    .hero .form > .btn {
+        float: none;
+    }
 /* main content */
 main h2 {
     display: inline-block;
