@@ -1,4 +1,4 @@
-const socialsData = [
+const socialsData = [     //objektai - duomenu laikymo budas
     {
         icon: 'facebook',
         link: '#'
