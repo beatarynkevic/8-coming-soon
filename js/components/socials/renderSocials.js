@@ -7,7 +7,6 @@ import { isValidSocialItem } from './isValidSocialItem.js';
  * @param {*} data Duomenu masyvas su objektais, kurie reprezentuoja social nuorodas
  * @returns {boolean} Logikos vykdymo metu radus klaida grazinamas `false`,o funkcijai suveikus teisingai - `true`
  */
-
 function renderSocials(selector, data) {
 
     //input validation
