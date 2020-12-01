@@ -8,6 +8,7 @@ import { renderAllProgressBars } from './components/progress-bar/renderAllProgre
 renderSocials('footer > .row', socialsData);                 //funkcijai duodu duomeis
 
 renderClock('.clock');
-renderAllProgressBars(progressBarData);
 
+
+renderAllProgressBars(progressBarData);
 // renderProgressBar('.column.left', 'Web developmnet', 90);
