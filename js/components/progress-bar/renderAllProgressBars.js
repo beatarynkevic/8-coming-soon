@@ -24,11 +24,24 @@ function renderAllProgressBars(data) {
         renderProgressBar(bar.selector, bar.title, bar.value);
     }
 
-    const renderAllProgressBars = document.querySelectorAll('.progress-bar');
-    console.log(renderAllProgressBars);
+    const allProgressBars = document.querySelectorAll('.progress-bar');
+    console.log(allProgressBars);
 
     addEventListener('scroll', () => {
-        console.log('scrolling...');
+        const screenBottom = innerHeight + scrollY;
+
+        for (let bar of allProgressBars) {
+            const barBottom = bar.offsetHeight + bar.offsetTop;  //kaip aukstai elemnto apacia
+            if (screenBottom >= barBottom) {
+                bar.classList.add('animate');
+            }
+        }
+
+        // console.log(renderAllProgressBars);
+        // offsetHeight: 50
+        // offsetLeft: 75
+        // offsetTop: 957
+        // offsetWidth: 400
     })
 
     return true;
