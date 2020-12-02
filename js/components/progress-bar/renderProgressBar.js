@@ -11,7 +11,7 @@ function renderProgressBar(selector, title, value) {
     if (!isValidSingleProgressBar({ selector, title, value })) {
         return false;
     }
-    console.log(title, value);
+    // console.log(title, value);
     const HTML = `<div class="progress-bar">
                     <div class="top">
                         <div class="label">${title}</div>
