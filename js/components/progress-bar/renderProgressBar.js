@@ -1,4 +1,4 @@
-import { isValidSingleProgressBar } from "./isValidSingleProgressbar.js";
+import { isValidSingleProgressBar } from "./isValidSingleProgressBar.js";
 
 /**
  * Progress bar komponento generavimas
