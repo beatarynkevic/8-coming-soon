@@ -1,6 +1,6 @@
 import { renderProgressBar } from './renderProgressBar.js';
 import { isValidProgressBarsList } from './isValidProgressBarsList.js';
-import { isValidSingleProgressBar } from './isValidSingleProgressbar.js';
+import { isValidSingleProgressBar } from "./isValidSingleProgressBar.js";
 
 /**
  * 
@@ -23,6 +23,13 @@ function renderAllProgressBars(data) {
         }
         renderProgressBar(bar.selector, bar.title, bar.value);
     }
+
+    const renderAllProgressBars = document.querySelectorAll('.progress-bar');
+    console.log(renderAllProgressBars);
+
+    addEventListener('scroll', () => {
+        console.log('scrolling...');
+    })
 
     return true;
 }
