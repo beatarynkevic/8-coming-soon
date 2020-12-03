@@ -30,7 +30,7 @@ function isValidName(name) {
         return 'Vardas negali buti tik is mazuju raidziu';
     }
 
-    //jei pagauname, jog ivesta vien didziosiomis, tai grazinam zinute - isijunk CapsLock
+    //jei pagauname, jog ivesta vien didziosiomis, tai grazinam zinute - isjunk CapsLock
 
     const realNameFormat = name[0].toUpperCase() + name.slice(1).toLowerCase();
     if (realNameFormat !== name) {
