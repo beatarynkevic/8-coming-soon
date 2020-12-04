@@ -40,12 +40,11 @@ function formValidator(selector) {
                 errorCount++;
             }
         }
-    }
 
         if (errorCount === 0) {
-        console.log('Siunciam info...');
-    }
-})
+            console.log('Siunciam info...');
+        }
+    })
 
 }
 
