@@ -19,9 +19,9 @@ renderAllProgressBars(progressBarData);
 
 const toast = new Toast();
 toast.render();
-toast.show('error', 'Cia yra klaida!!!');
+// toast.show('error', 'Cia yra klaida!!!');
 // toast.show('success', 'Buvo gera diena!!! ;)');
 
 
-formValidator('.hero .form'); //nurodom formas,kurias reikes valyduoti
-formValidator('main .form');
+formValidator('.hero .form', toast); //nurodom formas,kurias reikes valyduoti
+formValidator('main .form', toast);

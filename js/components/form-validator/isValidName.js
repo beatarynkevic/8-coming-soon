@@ -12,16 +12,10 @@ function isValidName(name) {
     }
 
     //turi buti tik abeceles raides
-    console.log('gautas vardas');
-    console.log(name);
-    console.log('-------');
-
     const abc = 'qwertyuiopasdfghjklzxcvbnm';
     for (let letter of name) {
-        console.log(letter);
-        if (!abc.includes(letter.toLowerCase)) {
-            console.error(`ERROR: varde panaudota neleistinas simbolis (${letter})`);
-            return false;
+        if (!abc.includes(letter.toLowerCase())) {
+            return (`Varde panaudota neleistinas simbolis (${letter})`);
         }
     }
 

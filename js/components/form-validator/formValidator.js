@@ -1,6 +1,13 @@
 import { validation } from './validationRules.js';
-
-function formValidator(selector) {
+/**
+ * Formos validavima atliekanti funkcija, kuri automaiskai atpazista kokiems ivesties
+ laukams, kokias reikia taikyti valydacijos taisykles ir pagal tai atvaziduoja
+ atitinkamus pranesimus 
+ * @param {string} selector CSS like selector
+ * @param {Object} toastObject Objektas i kuri reikia kreiptis norint atvaizduoti pranesimus, tiek sekmes, tiek klaidos atvieju
+ * @returns {boolean} Funkcijai sekmingai suveikus grazinamas `true`, priesingu atvieju `false`
+ */
+function formValidator(selector, toastObject) {
     const formDOM = document.querySelector(selector);
     const submitBtnDOM = formDOM.querySelector('input[type="submit"]'); //susirasti input su submit
 
@@ -8,7 +15,7 @@ function formValidator(selector) {
     // console.log(submitBtnDOM);
 
     if (!submitBtnDOM) {
-        console.log('ERROR: formoje nerastas submit mygtukas.');
+        toastObject.show('ERROR: formoje nerastas submit mygtukas.');
         return false;
     }
 
@@ -18,15 +25,17 @@ function formValidator(selector) {
     const allElements = [...allInputDOMs, ...allTextareaDOMs]; //isskleiskime sarasus
 
     if (allElements.length === 0) {
-        console.error('ERROR: formoje nerasta nei vieno input ar textarea elementu');
+        toastObject.show('ERROR: formoje nerasta nei vieno input ar textarea elementu');
         return false;
     }
 
-    submitBtnDOM.addEventListener('click', () => {  //kai paspausi...
+    submitBtnDOM.addEventListener('click', event => {
+        event.preventDefault();
+        //kai paspausi...
         // console.log(allInputDOMs);     <...isspausdint consoleje visus inputs
         // console.log(allTextareaDOMs);  <...isspausdint consoleje visus textarea
         let errorCount = 0;
-        console.clear();
+
 
         for (let input of allElements) { //...inicijuok cikla per kiekviena inputa
             const validationRule = input.dataset.validation;
@@ -36,16 +45,17 @@ function formValidator(selector) {
             const validationFunction = validation[validationRule];
             const error = validationFunction(text);
             if (error !== true) {
-                console.log(error);
+                toastObject.show('error', error);
                 errorCount++;
+                break; //padaro, jog klaidos pranesima mestu ties pirma klaida
             }
         }
 
         if (errorCount === 0) {
-            console.log('Siunciam info...');
+            toastObject.show('success', 'Siunciam info...');
         }
     })
-
+    return true;
 }
 
 export { formValidator }
