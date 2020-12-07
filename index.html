@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./css/form.css">
     <link rel="stylesheet" href="./css/mouse.css">
     <link rel="stylesheet" href="./css/progress-bar.css">
+    <link rel="stylesheet" href="./css/toast.css">
     <!-- custom -->
     <link rel="stylesheet" href="./css/custom.css">
 </head>
@@ -31,9 +32,9 @@
                 quod.</p>
             <div class="clock"></div>
             <form class="form">
-                <input type="email" placeholder="Email" required>
-                <!-- <input type="submit" value="Subscribe now!"> -->
-                <div class="btn">Subscribe now!</div>
+                <input type="email" placeholder="Email" required data-validation="email">
+                <input type="submit" value="Subscribe now!" class="btn">
+                <!-- <div class="btn">Subscribe now!</div> -->
             </form>
             <div class="mouse">
                 <div class="wheel"></div>
@@ -53,11 +54,11 @@
                     laborum minus <a href="mailto:trendy@blabla.com">trendy@blabla.com</a> saepe, dolorum modi culpa
                     magni hic.</p>
                 <form class="form">
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" required></textarea>
-                    <!-- <input type="submit" value="Send meesage"> -->
-                    <div class="btn">Send message</div>
+                    <input type="text" placeholder="Name" data-validation="name">
+                    <input type="email" placeholder="Email" required data-validation="email">
+                    <textarea maxlength="1000" placeholder="Message" required data-validation="text"></textarea>
+                    <input type="submit" value="Send meesage" class="btn">
+                    <!-- <div class="btn">Send message</div> -->
                 </form>
             </div>
         </div>
